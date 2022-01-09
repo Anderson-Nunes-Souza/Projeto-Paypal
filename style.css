@@ -1,10 +1,34 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     text-decoration: none;
 }
 
-.corpo{
-    background-color: #3e3939;
+.corpo {
+    background-color: #1b1b1b;
+}
+
+.btncomprar {
+    text-align: right;
+}
+
+.footer-txt {
+    font-weight: 400;
+    font-size: 50px;
+    color: #ffffff;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 32px;
+    gap: 32px;
+    height: 20px;
+    border: 32px;
+    margin: 32px;
+}
+
+.container-fluid {
+    text-align: center;
+    color: #ffffff;
 }

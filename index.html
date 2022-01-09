@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="PT-BR">
+
 <head>
     <link rel="stylesheet" type="text/css" href="./style.css">
     <meta charset="UTF-8">
@@ -11,22 +12,77 @@
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
 </head>
+
 <body class="corpo">
     <header>
-        <nav class="navbar navbar-expand-sm corpo navbar-dark sticky-top">
+        <!-- Menu superior-->
+        <nav class="navbar navbar-expand-sm corpo navbar-dark bg-dark sticky-top">
             <a class="navbar-brand" href="./index.html">Ω Omega store Ω</a>
             <ul class="navbar-nav">
-              <li class="nav-item">
-                <a class="nav-link" href="#">Products</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">About</a>
-              </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="./Cart.html">Carrinho</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="./Pedidos.html">Pedidos</a>
+                </li>
             </ul>
-          </nav>
+        </nav>
     </header>
+    <!--Menu Carousel de Produtos-->
+    <div id="demo" class="carousel slide" data-ride="carousel" align="center">
+        <ul class="carousel-indicators">
+            <li data-target="#demo" data-slide-to="0" class="active"></li>
+            <li data-target="#demo" data-slide-to="1"></li>
+            <li data-target="#demo" data-slide-to="2"></li>
+        </ul>
+
+        <!-- Produto 1 Headset -->
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="./imgs/headset_1.jpg" alt="">
+                <div>
+                    <h3> Headset Gamer</h3>
+                    <p>o melhor da categoria</p>
+                    <p><s>De:139,99</s></p>
+                    <p>Por R$99,99</p>
+                    <div class="btncomprar">
+                        <button type="button" class="btn btn-primary btn-lg">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+            </div>
+            <!--Produto2 teclado-->
+            <div class="carousel-item">
+                <img src="./imgs/teclado_2.jpg" alt="">
+                <div class="btncomprar">
+                    <button type="button" class="btn btn-primary btn-lg">Adicionar ao Carrinho</button>
+                </div>
+                <div>
+                    <h3>Teclado Hp</h3>
+                    <p>o melhor da categoria</p>
+                </div>
+            </div>
+            <!--produto3 mouse-->
+            <div class="carousel-item">
+                <img src="./imgs/mouse_1.jpg" alt="Seus jogos e filmes terão melhor qualidade de audio">
+                <button type="button" class="btn btn-primary btn-lg">Adicionar ao Carrinho</button>
+            </div>
+        </div>
+
+        <!-- Left and right controls -->
+        <a class="carousel-control-prev" href="#demo" data-slide="prev">
+            <span class="carousel-control-prev-icon "></span>
+        </a>
+        <a class="carousel-control-next" href="#demo" data-slide="next">
+            <span class="carousel-control-next-icon"></span>
+        </a>
+
+    </div>
     <main></main>
     <footer>
+        <div class="bg-dark center">
+            <h3 class="footer-txt">Omega Store Ltda - Todos os direitos reservados!</h3>
+        </div>
     </footer>
 </body>
+
 </html>
