@@ -1,34 +1,19 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    text-decoration: none;
+.img-cart {
+    display: block;
+    max-width: 50px;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-.corpo {
-    background-color: #1b1b1b;
+table tr td {
+    border: 1px solid #FFFFFF;
 }
 
-.btncomprar {
-    text-align: right;
+table tr th {
+    background: #eee;
 }
 
-.footer-txt {
-    font-weight: 400;
-    font-size: 50px;
-    color: #ffffff;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    padding: 32px;
-    gap: 32px;
-    height: 20px;
-    border: 32px;
-    margin: 32px;
-}
-
-.container-fluid {
-    text-align: center;
-    color: #ffffff;
+.panel-shadow {
+    box-shadow: rgba(0, 0, 0, 0.3) 7px 7px 7px;
 }

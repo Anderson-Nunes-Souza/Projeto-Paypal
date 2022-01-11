@@ -10,6 +10,7 @@
     <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
     <link href="https://netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="./js/shopping_cart.js"></script>
 </head>
 
 <body>
@@ -52,13 +53,12 @@
                                             </td>
                                             <td>
                                                 <form class="form-inline">
-                                                    <input class="form-control" type="text" value="1">
-                                                    <button rel="tooltip" class="btn btn-default"><i class="fa fa-pencil"></i></button>
+                                                    <input class="form-control" type="number" value="1" id="prod1Qtd" min="1" max="99" onchange="CalcularProd('prod1Qtd', 'prod1Unit','prod1Total')">
                                                     <a href="#" class="btn btn-primary"><i class="fa fa-trash-o"></i></a>
                                                 </form>
                                             </td>
-                                            <td>$54.00</td>
-                                            <td>$54.00</td>
+                                            <td>$<span id="prod1Unit">54.00</span></td>
+                                            <td>$<span id="prod1Total">54.00</span></td>
                                         </tr>
                                         <tr>
                                             <td><img src="https://via.placeholder.com/400x200/87CEFA/000000" class="img-cart"></td>
@@ -67,20 +67,20 @@
                                             </td>
                                             <td>
                                                 <form class="form-inline">
-                                                    <input class="form-control" type="text" value="2">
-                                                    <button class="btn btn-default"><i class="fa fa-pencil"></i></button>
+                                                    <input class="form-control" type="number" value="1" id="prod2Qtd" min="1" max="99" onchange="CalcularProd('prod2Qtd', 'prod2Unit', 'prod2Total')">
                                                     <a href="#" class="btn btn-primary" rel="tooltip"><i class="fa fa-trash-o"></i></a>
                                                 </form>
                                             </td>
-                                            <td>$16.00</td>
-                                            <td>$32.00</td>
+                                            <td>$<span id="prod2Unit">16.00</span></td>
+                                            <td>$<span id="prod2Total">16.00</td></span>
                                         </tr>
                                         <tr>
                                             <td colspan="6">&nbsp;</td>
                                         </tr>
                                         <tr>
-                                            <td colspan="4" class="text-right">Total Product</td>
-                                            <td>$86.00</td>
+                                            <td colspan="4" class="text-right">Total Products</td>
+                                            <td>$<span id="totais">70.00</span></td>
+                                            </form>
                                         </tr>
                                         <tr>
                                             <td colspan="4" class="text-right">Total Shipping</td>
@@ -88,7 +88,7 @@
                                         </tr>
                                         <tr>
                                             <td colspan="4" class="text-right"><strong>Total</strong></td>
-                                            <td>$88.00</td>
+                                            <td>$<span>72.00</span></td>
                                         </tr>
                                     </tbody>
                                 </table>
