@@ -139,28 +139,46 @@
                                 <!--utilizando br para pular linha-->
                                 <br>
                                 <center>
-                                <!--Fim campos de cliente -->
+                                    <!--Fim campos de cliente -->
 
-                                <!-- botão Paypal -->
-                                <!-- Set up a container element for the button -->
-                                <div id="paypal-button-container"></div>
+                                    <!-- botão Paypal -->
+                                    <!-- Set up a container element for the button -->
+                                    <div id="paypal-button-container"></div>
 
-                                <!-- Include the PayPal JavaScript SDK -->
-                                <script src="https://www.paypal.com/sdk/js?client-id=AUGmAdOyjusVsx_rh4vhf0P-zaAE1S2HpFH9u9F8SMfQNS6EFDrG9C5mkL7gfgCyTbgeSf621VRgZRSe&currency=USD"></script>
+                                    <!-- Include the PayPal JavaScript SDK -->
+                                    <script src="https://www.paypal.com/sdk/js?client-id=AUGmAdOyjusVsx_rh4vhf0P-zaAE1S2HpFH9u9F8SMfQNS6EFDrG9C5mkL7gfgCyTbgeSf621VRgZRSe&currency=USD"></script>
 
-                                <script>
-                                    // Render the PayPal button into #paypal-button-container
-                                    paypal.Buttons({
-                                        createOrder: async () => {
-                                            const response = await fetch("./function.php")
-                                            const data = await response.text()
-                                            console.log(data)
-                                            return data
-                                        }
-                                    }).render('#paypal-button-container');
-                                </script>
-                                <!--fim codigo paypal-->
-                                </center>                        
+                                    <script>
+                                        // Render the PayPal button into #paypal-button-container
+                                        var idOrder;
+                                        var aToken;
+                                       
+                                        paypal.Buttons({
+                                            createOrder: async () => {
+                                                var response = await fetch("./phps/aTokenCreate.php")
+                                                aToken = await response.text();
+                                                //console.log(aToken)
+                                                response = await fetch("./phps/createOrder.php?atoken=" + aToken);
+                                                idOrder = await response.text()
+                                                //console.log(idOrder)
+                                                return idOrder;
+                                            },
+                                            onApprove: async () => {
+                                                console.log(aToken);
+                                                console.log(idOrder);
+                                                const response = await fetch("./phps/captureOrder.php?atoken=" + aToken + "&idOrder=" + idOrder);
+                                                const data = await response.text();
+
+                                                /* This function captures the funds from the transaction.
+                                                 return actions.order.capture().then(function(details) {
+                                                 // This function shows a transaction success message to your buyer.
+                                                 alert('Transaction completed by ' + details.payer.name.given_name);
+                                                 });*/
+                                            }
+                                        }).render('#paypal-button-container');
+                                    </script>
+                                    <!--fim codigo paypal-->
+                                </center>
                             </div>
                         </div>
                     </div>
