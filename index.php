@@ -157,23 +157,14 @@
                                             createOrder: async () => {
                                                 var response = await fetch("./phps/aTokenCreate.php")
                                                 aToken = await response.text();
-                                                //console.log(aToken)
                                                 response = await fetch("./phps/createOrder.php?atoken=" + aToken);
                                                 idOrder = await response.text()
-                                                //console.log(idOrder)
                                                 return idOrder;
                                             },
-                                            onApprove: async () => {
-                                                console.log(aToken);
-                                                console.log(idOrder);
+                                             onApprove: async () => {
                                                 const response = await fetch("./phps/captureOrder.php?atoken=" + aToken + "&idOrder=" + idOrder);
                                                 const data = await response.text();
-
-                                                /* This function captures the funds from the transaction.
-                                                 return actions.order.capture().then(function(details) {
-                                                 // This function shows a transaction success message to your buyer.
-                                                 alert('Transaction completed by ' + details.payer.name.given_name);
-                                                 });*/
+                                                window.location.href="./Thankyou.php?TransactionId=" + data;
                                             }
                                         }).render('#paypal-button-container');
                                     </script>

@@ -7,7 +7,7 @@ $ch = curl_init();
 curl_setopt($ch, CURLOPT_URL, 'https://api-m.sandbox.paypal.com/v2/checkout/orders');
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
 curl_setopt($ch, CURLOPT_POST, 1);
-curl_setopt($ch, CURLOPT_POSTFIELDS, "{\n  \"intent\": \"CAPTURE\",\n  \"purchase_units\": [\n    {\n      \"amount\": {\n        \"currency_code\": \"USD\",\n        \"value\": \"300.00\"\n      }\n    }\n  ]\n}");
+curl_setopt($ch, CURLOPT_POSTFIELDS, "{\n  \"intent\": \"CAPTURE\",\n  \"purchase_units\": [\n    {\n      \"amount\": {\n        \"currency_code\": \"USD\",\n        \"value\": \"700.00\"\n      }\n    }\n  ]\n}");
 
 $headers = array();
 $headers[] = 'Content-Type: application/json';
