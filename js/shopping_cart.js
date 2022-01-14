@@ -11,4 +11,11 @@ function totalProds() {
 
     document.getElementById("totais").innerHTML = (+document.getElementById("prod1Total").innerHTML +
         +document.getElementById("prod2Total").innerHTML).toFixed(2);
+    totalShipping();
+}
+
+function totalShipping() {
+    document.getElementById("vlrTotal").innerHTML = (+document.getElementById("prod1Total").innerHTML +
+        +document.getElementById("prod2Total").innerHTML +
+        +document.getElementById("shipping").innerHTML).toFixed(2);
 }
