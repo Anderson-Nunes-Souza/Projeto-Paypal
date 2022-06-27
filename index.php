@@ -213,20 +213,20 @@
                                             <span style="color: red !important; display: inline; float: none;">*</span>
                                             <input id="buyerCity" name="story" value="South Park">
                                         </div>
-                                        <!--Fim campos de cliente -->
                                         <br>
 
+                                        <table class="table">
+                                            <tr>
+                                                <td class="text-right">
+                                                <button class="btn btn-primary" data-toggle="collapse" data-target="#pay_area" data-parent="#pBody"> Checkout </button>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                        <!--Fim campos de cliente -->
+                                        <br>
                                             <!-- Express Checkout -->
-
                                             <hr color="red">
-
                                             <!-- Set up a container element for the button -->
-                                            
-                                            <div class="row">
-                                                <div class="col-6">
-                                                    <button class="btn btn-primary" data-toggle="collapse" data-target="#pay_area" data-parent="#pBody"> Checkout </button>
-                                                </div>
-                                            </div>
                                             
                                             <!--Botão Next após dados do comprador -->
                                             <div id="pay_area" class="collapse">
