@@ -37,6 +37,7 @@
                                 <img class="img-circle img-thumbnail" src="https://bootdey.com/img/Content/user_3.jpg"> Matew darfkmoun
                             </h3>
                         </div>
+                        <div id="pBody">
                         <div class="panel-body">
                             <div class="table-responsive">
                                 <table class="table">
@@ -94,47 +95,57 @@
                                             <td colspan="4" class="text-right"><strong>Total</strong></td>
                                             <td>$<span id="vlrTotal">72.00</span></td>
                                         </tr>
+                                        </div>
+                                        <tr>
+                                            <td colspan="5" class="text-right">
+                                                <button class="btn btn-primary" data-toggle="collapse" data-target="#clientArea" data-parent="#"> Next </button>
+                                            </td>
+                                        </tr>
                                     </tbody>
                                     <t>
                                 </table>
-                                <hr color="red">
-                                <!-- Campos de Cliente-->
-                                <form class='form2'>
-                                    <div class="mb-3">
-                                        <label for="text" class="form-label">First Name</label>
-                                        <input type="text" class="form-control" id="buyerFirstName" value="Anderson">
-                                    </div>
-                                    <div class="mb-3">
-                                        <label for="text" class="form-label">Last Name</label>
-                                        <input type="text" class="form-control" id="buyerLastName" value="Souza">
-                                    </div>
-                                    <div class="mb-3">
-                                        <label for="email" class="form-label">Email address</label>
-                                        <input type="email" class="form-control" id="buyerEmail" aria-describedby="emailHelp" value="andersonbuyer@paypal.com">
-                                    </div>
-                                    <div class="mb-3">
-                                        <label for="number" class="form-label">Phone Number</label>
-                                        <span style="color: red !important; display: inline; float: none;">*</span>
-                                        <input type="number" id="buyerPhone" class="form-control" name="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required placeholder="123-456-7890">
-                                    </div>
-                                    <div>
-                                        <hr color="red">
-                                        <label for="address" class="Address-Tilt">Address</label>
-                                    </div>
-                                    <div>
-                                        <label for="Country" class="form-label">Country</label>
-                                        <span style="color: red !important; display: inline; float: none;">*</span>
 
-                                        <select id="buyerCountry" name="country">
-                                            <option id="EUA" value="US">United States</option>
-                                        </select>
-                                    </div>
-                                    <div>
-                                        <label for="State" class="form-label">State</label>
-                                        <span style="color: red !important; display: inline; float: none;">*</span>
-                                        <select id=BuyerState>
-                                            <option id="CO" value="CO">Colorado</option>
-                                            <!-- <option id="AL" value="AL">Alabama</option>
+                                <!-- Campos de Cliente-->
+                                <div id="clientArea" class="collapse">
+
+                                    <hr color="red">
+
+                                    <form class='form2'>
+                                        <div class="mb-3">
+                                            <label for="text" class="form-label">First Name</label>
+                                            <input type="text" class="form-control" id="buyerFirstName" value="Anderson">
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="text" class="form-label">Last Name</label>
+                                            <input type="text" class="form-control" id="buyerLastName" value="Souza">
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="email" class="form-label">Email address</label>
+                                            <input type="email" class="form-control" id="buyerEmail" aria-describedby="emailHelp" value="andersonbuyer@paypal.com">
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="number" class="form-label">Phone Number</label>
+                                            <span style="color: red !important; display: inline; float: none;">*</span>
+                                            <input type="number" id="buyerPhone" class="form-control" name="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required placeholder="123-456-7890">
+                                        </div>
+                                        <div>
+                                            <hr color="red">
+                                            <label for="address" class="Address-Tilt">Address</label>
+                                        </div>
+                                        <div>
+                                            <label for="Country" class="form-label">Country</label>
+                                            <span style="color: red !important; display: inline; float: none;">*</span>
+
+                                            <select id="buyerCountry" name="country">
+                                                <option id="EUA" value="US">United States</option>
+                                            </select>
+                                        </div>
+                                        <div>
+                                            <label for="State" class="form-label">State</label>
+                                            <span style="color: red !important; display: inline; float: none;">*</span>
+                                            <select id=BuyerState>
+                                                <option id="CO" value="CO">Colorado</option>
+                                                <!-- <option id="AL" value="AL">Alabama</option>
                                             <option id="AK" value="AK">Alaska</option>
                                             <option id="AZ" value="AZ">Arizona</option>
                                             <option id="AR" value="AR">Arkansas</option>
@@ -184,61 +195,73 @@
                                             <option id="WV" value="WV">West Virginia</option>
                                             <option id="WI" value="WI">Wisconsin</option>
                                             <option id="WY" value="WY">Wyoming</option> -->
-                                        </select>
-                                    </div>
-                                    <div>
-                                        <label for="ZipCode" class="form-label">ZipCode</label>
-                                        <span style="color: red !important; display: inline; float: none;">*</span>
-                                        <input id="BuyerZip" name="zip" type="text" inputmode="numeric" pattern="^(?(^00000(|-0000))|(\d{5}(|-\d{4})))$" value="80440">
-                                    </div>
-                                    <div>
-                                        <label for="Street" class="form-label">Street</label>
-                                        <span style="color: red !important; display: inline; float: none;">*</span>
-                                        <input id="buyerstreet" name="story" value="610 Front St">
-                                        </inout>
-                                    </div>
-                                    <div>
-                                    <label for="Street" class="form-label">City</label>
-                                        <span style="color: red !important; display: inline; float: none;">*</span>
-                                        <input id="buyerCity" name="story" value="South Park">
-                                    </div>
-                                    <!--utilizando br para pular linha-->
-                                    <br>
-                                    <center>
+                                            </select>
+                                        </div>
+                                        <div>
+                                            <label for="ZipCode" class="form-label">ZipCode</label>
+                                            <span style="color: red !important; display: inline; float: none;">*</span>
+                                            <input id="BuyerZip" name="zip" type="text" inputmode="numeric" pattern="^(?(^00000(|-0000))|(\d{5}(|-\d{4})))$" value="80440">
+                                        </div>
+                                        <div>
+                                            <label for="Street" class="form-label">Street</label>
+                                            <span style="color: red !important; display: inline; float: none;">*</span>
+                                            <input id="buyerstreet" name="story" value="610 Front St">
+                                            </inout>
+                                        </div>
+                                        <div>
+                                            <label for="Street" class="form-label">City</label>
+                                            <span style="color: red !important; display: inline; float: none;">*</span>
+                                            <input id="buyerCity" name="story" value="South Park">
+                                        </div>
                                         <!--Fim campos de cliente -->
-                                        <hr color="red">
+                                        <br>
 
-                                        <!-- botão Paypal -->
-                                        <!-- Set up a container element for the button -->
-                                        <div id="paypal-button-container"></div>
+                                            <!-- Express Checkout -->
 
-                                        <!-- Include the PayPal JavaScript SDK -->
-                                        <script src="https://www.paypal.com/sdk/js?client-id=AUGmAdOyjusVsx_rh4vhf0P-zaAE1S2HpFH9u9F8SMfQNS6EFDrG9C5mkL7gfgCyTbgeSf621VRgZRSe&currency=USD"></script>
+                                            <hr color="red">
 
-                                        <script>
-                                            // Render the PayPal button into #paypal-button-container
-                                            var idOrder;
-                                            var aToken;
+                                            <!-- Set up a container element for the button -->
+                                            
+                                            <div class="row">
+                                                <div class="col-6">
+                                                    <button class="btn btn-primary" data-toggle="collapse" data-target="#pay_area" data-parent="#pBody"> Checkout </button>
+                                                </div>
+                                            </div>
+                                            
+                                            <!--Botão Next após dados do comprador -->
+                                            <div id="pay_area" class="collapse">
 
-                                            paypal.Buttons({
-                                                createOrder: async () => {
-                                                    var buyerInfo = CriaPessoa();
-                                                    var response = await fetch("./phps/aTokenCreate.php")
-                                                    aToken = await response.text();
-                                                    response = await fetch("./phps/createOrder.php?atoken=" + aToken + "&buyerInfo=" + buyerInfo);
-                                                    idOrder = await response.text()
-                                                    console.log(idOrder);
-                                                    return idOrder;
-                                                },
-                                                onApprove: async () => {
-                                                    const response = await fetch("./phps/captureOrder.php?atoken=" + aToken + "&idOrder=" + idOrder);
-                                                    const data = await response.text();
-                                                    window.location.href = "./Thankyou.php?TransactionId=" + data;
-                                                }
-                                            }).render('#paypal-button-container');
-                                        </script>
-                                        <!--fim codigo paypal-->
-                                    </center>
+                                                <div id="paypal-button-container"></div>
+
+
+                                                <!-- Include the PayPal JavaScript SDK -->
+                                                <script src="https://www.paypal.com/sdk/js?client-id=AUGmAdOyjusVsx_rh4vhf0P-zaAE1S2HpFH9u9F8SMfQNS6EFDrG9C5mkL7gfgCyTbgeSf621VRgZRSe&currency=USD"></script>
+
+                                                <script>
+                                                    // Render the PayPal button into #paypal-button-container
+                                                    var idOrder;
+                                                    var aToken;
+
+                                                    paypal.Buttons({
+                                                        createOrder: async () => {
+                                                            var buyerInfo = CriaPessoa();
+                                                            var response = await fetch("./phps/aTokenCreate.php")
+                                                            aToken = await response.text();
+                                                            response = await fetch("./phps/createOrder.php?atoken=" + aToken + "&buyerInfo=" + buyerInfo);
+                                                            idOrder = await response.text()
+                                                            console.log(idOrder);
+                                                            return idOrder;
+                                                        },
+                                                        onApprove: async () => {
+                                                            const response = await fetch("./phps/captureOrder.php?atoken=" + aToken + "&idOrder=" + idOrder);
+                                                            const data = await response.text();
+                                                            window.location.href = "./Thankyou.php?TransactionId=" + data;
+                                                        }
+                                                    }).render('#paypal-button-container');
+                                                </script>
+                                                <!--fim codigo paypal-->
+                                            </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -272,20 +295,20 @@
     <script type="text/javascript">
         function CriaPessoa() {
             const Pessoa = [];
-            Pessoa.push(document.getElementById("buyerFirstName").value);    //indice 0
-            Pessoa.push(document.getElementById("buyerLastName").value);     //indice 1
-            Pessoa.push(document.getElementById("buyerEmail").value);        //indice 2
-            Pessoa.push(document.getElementById("buyerPhone").value);        //indice 3
-            Pessoa.push(document.getElementById("buyerCountry").value);      //indice 4 
-            Pessoa.push(document.getElementById("BuyerState").value);        //indice 5 
-            Pessoa.push(document.getElementById("BuyerZip").value);          //indice 6
-            Pessoa.push(document.getElementById("buyerstreet").value);       //indice 7
-            Pessoa.push(document.getElementById("vlrTotal").innerHTML);      //indice 8
-            Pessoa.push(document.getElementById("totais").innerHTML);        //indice 9
-            Pessoa.push(document.getElementById("shipping").innerHTML);      //indice 10
-            Pessoa.push(document.getElementById("prod1Qtd").value);          //indice 11
-            Pessoa.push(document.getElementById("prod2Qtd").value);          //indice 12
-            Pessoa.push(document.getElementById("buyerCity").value);          //indice 13
+            Pessoa.push(document.getElementById("buyerFirstName").value); //indice 0
+            Pessoa.push(document.getElementById("buyerLastName").value); //indice 1
+            Pessoa.push(document.getElementById("buyerEmail").value); //indice 2
+            Pessoa.push(document.getElementById("buyerPhone").value); //indice 3
+            Pessoa.push(document.getElementById("buyerCountry").value); //indice 4 
+            Pessoa.push(document.getElementById("BuyerState").value); //indice 5 
+            Pessoa.push(document.getElementById("BuyerZip").value); //indice 6
+            Pessoa.push(document.getElementById("buyerstreet").value); //indice 7
+            Pessoa.push(document.getElementById("vlrTotal").innerHTML); //indice 8
+            Pessoa.push(document.getElementById("totais").innerHTML); //indice 9
+            Pessoa.push(document.getElementById("shipping").innerHTML); //indice 10
+            Pessoa.push(document.getElementById("prod1Qtd").value); //indice 11
+            Pessoa.push(document.getElementById("prod2Qtd").value); //indice 12
+            Pessoa.push(document.getElementById("buyerCity").value); //indice 13
             return Pessoa;
         }
     </script>
