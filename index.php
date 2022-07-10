@@ -38,76 +38,69 @@
                             </h3>
                         </div>
                         <div id="pBody">
-                        <div class="panel-body">
-                            <div class="table-responsive">
-                                <table class="table">
-                                    <thead>
-                                        <tr>
-                                            <th>Product</th>
-                                            <th>Description</th>
-                                            <th>Qty</th>
-                                            <th>Price</th>
-                                            <th>Total</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td><img src="https://via.placeholder.com/400x200/FFB6C1/000000" class="img-cart"></td>
-                                            <td><strong>Product 1</strong>
-                                                <p>Size : 26</p>
-                                            </td>
-                                            <td>
-                                                <form class="form-inline">
-                                                    <input class="form-control" type="number" value="1" id="prod1Qtd" min="1" max="99" onchange="CalcularProd('prod1Qtd', 'prod1Unit','prod1Total')">
-                                                    <a href="#" class="btn btn-primary"><i class="fa fa-trash-o"></i></a>
+                            <div class="panel-body">
+                                <div class="table-responsive">
+                                    <table class="table">
+                                        <thead>
+                                            <tr>
+                                                <th>Product</th>
+                                                <th>Description</th>
+                                                <th>Qty</th>
+                                                <th>Price</th>
+                                                <th>Total</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td><img src="https://via.placeholder.com/400x200/FFB6C1/000000" class="img-cart"></td>
+                                                <td><strong>Product 1</strong>
+                                                    <p>Size : 26</p>
+                                                </td>
+                                                <td>
+                                                    <form class="form-inline">
+                                                        <input class="form-control" type="number" value="1" id="prod1Qtd" min="1" max="99" onchange="CalcularProd('prod1Qtd', 'prod1Unit','prod1Total')">
+                                                        <a href="#" class="btn btn-primary"><i class="fa fa-trash-o"></i></a>
+                                                    </form>
+                                                </td>
+                                                <td>$<span id="prod1Unit">54.00</span></td>
+                                                <td>$<span id="prod1Total">54.00</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td><img src="https://via.placeholder.com/400x200/87CEFA/000000" class="img-cart"></td>
+                                                <td><strong>Product 2</strong>
+                                                    <p>Size : M</p>
+                                                </td>
+                                                <td>
+                                                    <form class="form-inline">
+                                                        <input class="form-control" type="number" value="1" id="prod2Qtd" min="1" max="99" onchange="CalcularProd('prod2Qtd', 'prod2Unit', 'prod2Total')">
+                                                        <a href="#" class="btn btn-primary" rel="tooltip"><i class="fa fa-trash-o"></i></a>
+                                                    </form>
+                                                </td>
+                                                <td>$<span id="prod2Unit">16.00</span></td>
+                                                <td>$<span id="prod2Total">16.00</td></span>
+                                            </tr>
+                                            <tr>
+                                                <td colspan="6">&nbsp;</td>
+                                            </tr>
+                                            <tr>
+                                                <td colspan="4" class="text-right">Total Products</td>
+                                                <td>$<span id="totais">70.00</span></td>
                                                 </form>
-                                            </td>
-                                            <td>$<span id="prod1Unit">54.00</span></td>
-                                            <td>$<span id="prod1Total">54.00</span></td>
-                                        </tr>
-                                        <tr>
-                                            <td><img src="https://via.placeholder.com/400x200/87CEFA/000000" class="img-cart"></td>
-                                            <td><strong>Product 2</strong>
-                                                <p>Size : M</p>
-                                            </td>
-                                            <td>
-                                                <form class="form-inline">
-                                                    <input class="form-control" type="number" value="1" id="prod2Qtd" min="1" max="99" onchange="CalcularProd('prod2Qtd', 'prod2Unit', 'prod2Total')">
-                                                    <a href="#" class="btn btn-primary" rel="tooltip"><i class="fa fa-trash-o"></i></a>
-                                                </form>
-                                            </td>
-                                            <td>$<span id="prod2Unit">16.00</span></td>
-                                            <td>$<span id="prod2Total">16.00</td></span>
-                                        </tr>
-                                        <tr>
-                                            <td colspan="6">&nbsp;</td>
-                                        </tr>
-                                        <tr>
-                                            <td colspan="4" class="text-right">Total Products</td>
-                                            <td>$<span id="totais">70.00</span></td>
-                                            </form>
-                                        </tr>
-                                        <tr>
-                                            <td colspan="4" class="text-right">Total Shipping</td>
-                                            <td>$<span id="shipping">2.00</span></td>
-                                        </tr>
-                                        <tr>
-                                            <td colspan="4" class="text-right"><strong>Total</strong></td>
-                                            <td>$<span id="vlrTotal">72.00</span></td>
-                                        </tr>
-                                        </div>
-                                        <tr>
-                                            <td colspan="5" class="text-right">
-                                                <button class="btn btn-primary" data-toggle="collapse" data-target="#clientArea" data-parent="#"> Next </button>
-                                            </td>
-                                        </tr>
-                                    </tbody>
-                                    <t>
-                                </table>
+                                            </tr>
+                                            <tr>
+                                                <td colspan="4" class="text-right">Total Shipping</td>
+                                                <td>$<span id="shipping">2.00</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td colspan="4" class="text-right"><strong>Total</strong></td>
+                                                <td>$<span id="vlrTotal">72.00</span></td>
+                                            </tr>
+                                </div>
+                                </tbody>
+                                <t>
+                                    </table>
 
-                                <!-- Campos de Cliente-->
-                                <div id="clientArea" class="collapse">
-
+                                    <!-- Campos de Cliente-->
                                     <hr color="red">
 
                                     <form class='form2'>
@@ -217,57 +210,84 @@
 
                                         <table class="table">
                                             <tr>
-                                                <td class="text-right">
-                                                <button class="btn btn-primary" data-toggle="collapse" data-target="#pay_area" data-parent="#pBody"> Checkout </button>
+                                                <td>
+                                                    <button class="btn btn-primary col-6" data-toggle="collapse" data-target="#expCheckout"> Express Checkout </button>
+                                                </td>
+                                                <td>
+                                                    <button class="btn btn-primary col-2" data-toggle="collapse" data-target="#reference">Reference Transaction</button>
+                                                </td>
+                                                <td>
+                                                    <button class="btn btn-primary col-2" data-toggle="collapse" data-target="#ppPlus">PayPal Plus</button>
+                                                </td>
+                                                <td>
+                                                    <button class="btn btn-primary col-2" data-toggle="collapse" data-target="#btDrop">BT Drop-in</button>
+                                                </td>
+                                                <td>
+                                                    <button class="btn btn-primary col-2" data-toggle="collapse" data-target="#btHosted">BT hosted Fields</button>
                                                 </td>
                                             </tr>
                                         </table>
                                         <!--Fim campos de cliente -->
                                         <br>
-                                            <!-- Express Checkout -->
-                                            <hr color="red">
-                                            <!-- Set up a container element for the button -->
-                                            
-                                            <!--Botão Next após dados do comprador -->
-                                            <div id="pay_area" class="collapse">
+                                        <!-- Express Checkout -->
+                                        <hr color="red">
+                                        <!-- Set up a container element for the button -->
 
-                                                <div id="paypal-button-container"></div>
+                                        <!--Botão Next após dados do comprador -->
+                                        <div id="expCheckout" class="collapse">
+
+                                            <div id="paypal-button-container"></div>
 
 
-                                                <!-- Include the PayPal JavaScript SDK -->
-                                                <script src="https://www.paypal.com/sdk/js?client-id=AUGmAdOyjusVsx_rh4vhf0P-zaAE1S2HpFH9u9F8SMfQNS6EFDrG9C5mkL7gfgCyTbgeSf621VRgZRSe&currency=USD"></script>
+                                            <!-- Include the PayPal JavaScript SDK -->
+                                            <script src="https://www.paypal.com/sdk/js?client-id=AUGmAdOyjusVsx_rh4vhf0P-zaAE1S2HpFH9u9F8SMfQNS6EFDrG9C5mkL7gfgCyTbgeSf621VRgZRSe&currency=USD"></script>
 
-                                                <script>
-                                                    // Render the PayPal button into #paypal-button-container
-                                                    var idOrder;
-                                                    var aToken;
+                                            <script>
+                                                // Render the PayPal button into #paypal-button-container
+                                                var idOrder;
+                                                var aToken;
 
-                                                    paypal.Buttons({
-                                                        createOrder: async () => {
-                                                            var buyerInfo = CriaPessoa();
-                                                            var response = await fetch("./phps/aTokenCreate.php")
-                                                            aToken = await response.text();
-                                                            response = await fetch("./phps/createOrder.php?atoken=" + aToken + "&buyerInfo=" + buyerInfo);
-                                                            idOrder = await response.text()
-                                                            console.log(idOrder);
-                                                            return idOrder;
-                                                        },
-                                                        onApprove: async () => {
-                                                            const response = await fetch("./phps/captureOrder.php?atoken=" + aToken + "&idOrder=" + idOrder);
-                                                            const data = await response.text();
-                                                            window.location.href = "./Thankyou.php?TransactionId=" + data;
-                                                        }
-                                                    }).render('#paypal-button-container');
-                                                </script>
-                                                <!--fim codigo paypal-->
-                                            </div>
-                                </div>
-                            </div>
+                                                paypal.Buttons({
+                                                    createOrder: async () => {
+                                                        var buyerInfo = CriaPessoa();
+                                                        var response = await fetch("./phps/aTokenCreate.php")
+                                                        aToken = await response.text();
+                                                        response = await fetch("./phps/createOrder.php?atoken=" + aToken + "&buyerInfo=" + buyerInfo);
+                                                        idOrder = await response.text()
+                                                        console.log(idOrder);
+                                                        return idOrder;
+                                                    },
+                                                    onApprove: async () => {
+                                                        const response = await fetch("./phps/captureOrder.php?atoken=" + aToken + "&idOrder=" + idOrder);
+                                                        const data = await response.text();
+                                                        window.location.href = "./Thankyou.php?TransactionId=" + data;
+                                                    }
+                                                }).render('#paypal-button-container');
+                                            </script>
+                                        </div>
+                                        <!--fim do Express Checkout-->
+                                                
+                                        <!--BOTÕES COLLAPSE -->
+                                        <div id="reference" class="collapse">
+                                            Reference transaction
+                                        </div>
+                                        <div id="ppPlus" class="collapse">
+                                            PayPal Plus
+                                        </div>
+                                        <div id="btDrop" class="collapse">
+                                            Braintree Drop-in
+                                        </div>
+                                        <div id="btHosted" class="collapse">
+                                            Braintree Hosted Fields
+                                        </div>
+                                        
+                            </div> <!-- div body-->
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+    </div>
     </div>
 
     <style type="text/css">
