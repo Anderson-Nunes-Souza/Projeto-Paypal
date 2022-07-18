@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="PT_BR">
 
 <head>
     <meta charset="utf-8">
@@ -11,6 +11,9 @@
     <link href="https://netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
     <script src="./js/shopping_cart.js"></script>
+    <script src="https://www.paypalobjects.com/webstatic/ppplusdcc/ppplusdcc.min.js" type="text/javascript"></script>
+
+
     <!-- header paypal sdk-->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -240,7 +243,7 @@
 
 
                                             <!-- Include the PayPal JavaScript SDK -->
-                                            <script src="https://www.paypal.com/sdk/js?client-id=AUGmAdOyjusVsx_rh4vhf0P-zaAE1S2HpFH9u9F8SMfQNS6EFDrG9C5mkL7gfgCyTbgeSf621VRgZRSe&currency=USD"></script>
+                                            <script src="https://www.paypal.com/sdk/js?client-id=AUGmAdOyjusVsx_rh4vhf0P-zaAE1S2HpFH9u9F8SMfQNS6EFDrG9C5mkL7gfgCyTbgeSf621VRgZRSe&currency=BRL"></script>
 
                                             <script>
                                                 // Render the PayPal button into #paypal-button-container
@@ -250,15 +253,15 @@
                                                 paypal.Buttons({
                                                     createOrder: async () => {
                                                         var buyerInfo = CriaPessoa();
-                                                        var response = await fetch("./phps/aTokenCreate.php")
+                                                        var response = await fetch("./EC/aTokenCreate.php")
                                                         aToken = await response.text();
-                                                        response = await fetch("./phps/createOrder.php?atoken=" + aToken + "&buyerInfo=" + buyerInfo);
+                                                        response = await fetch("./EC/createOrder.php?atoken=" + aToken + "&buyerInfo=" + buyerInfo);
                                                         idOrder = await response.text()
                                                         console.log(idOrder);
                                                         return idOrder;
                                                     },
                                                     onApprove: async () => {
-                                                        const response = await fetch("./phps/captureOrder.php?atoken=" + aToken + "&idOrder=" + idOrder);
+                                                        const response = await fetch("./EC/captureOrder.php?atoken=" + aToken + "&idOrder=" + idOrder);
                                                         const data = await response.text();
                                                         window.location.href = "./Thankyou.php?TransactionId=" + data;
                                                     }
@@ -266,13 +269,84 @@
                                             </script>
                                         </div>
                                         <!--fim do Express Checkout-->
-                                                
+
                                         <!--BOTÕES COLLAPSE -->
                                         <div id="reference" class="collapse">
                                             Reference transaction
                                         </div>
-                                        <div id="ppPlus" class="collapse">
+                                        <div id="ppPlus" class="collapse" onclick="ppplusDiv">
                                             PayPal Plus
+
+                                            <div id="ppplusDiv"></div>
+
+                                            <script type="application/javascript">
+                                                var url = <?php print_r(strval(require_once('./Plus/CreatePayment.php'))); ?>;
+                                                //console.table(url);
+                                                var rememberedCards = "customerRememberedCardHash";
+                                                //var installments = null;
+
+                                                var ppp = PAYPAL.apps.PPP({
+                                                    "approvalUrl": url.links[1].href,
+                                                    "placeholder": "ppplusDiv",
+                                                    "mode": "sandbox",
+                                                    "payerFirstName": "John",
+                                                    "payerLastName": "Doe",
+                                                    "payerPhone": "5511954854582",
+                                                    "payerEmail": "johndoe@email.com",
+                                                    "payerTaxId": "19850755806",
+                                                    "payerTaxIdType": "BR_CPF",
+                                                    "language": "pt_BR",
+                                                    "country": "BR",
+                                                    "rememberedCards": rememberedCards,
+                                                    "enableContinue": "continueButton",
+                                                    "iframeHeight": "450",
+                                                    "onContinue": () => {
+                                                        $.ajax({
+                                                            url: "./Plus/paymentExecution.php",
+                                                            type: "POST",
+                                                            data: {
+                                                                field1: payerId, // payerid vai aqui,
+                                                                field2: url.links[2].href
+                                                            },
+                                                            success: function(result) {
+                                                                //console.log(typeof(result)); //->String
+                                                                console.log(result);
+                                                                //console.table(result);
+                                                                result = JSON.parse(result);
+                                                                //console.log(typeof(result)); //->Object
+                                                                console.table(result);
+                                                                //console.log(result.id);
+                                                                //console.table(result.id);
+                                                                //console.table(result.transactions);
+                                                                //console.table(result.transactions[0].related_resources[0].sale.id);
+                                                                alert("Pagamento Concluído");
+                                                                window.location.href = "http://localhost/Plus%20Project/PlusProject/SucessPayment.php?paymentId=" + result.transactions[0].related_resources[0].sale.id;
+                                                            },
+                                                            error: function() {
+                                                                //console.log(error);
+                                                                alert("function Error");
+                                                                window.location.href = "http://localhost/Plus%20Project/PlusProject/CancelPayment.html"
+                                                            }
+                                                        })
+                                                    },
+                                                });
+
+                                                window.addEventListener("message", messageListener, false);
+
+                                                function messageListener(event) {
+                                                    var data = JSON.parse(event.data);
+                                                    //console.table(data);
+                                                    if (data.action == "checkout") {
+                                                        payerId = data.result.payer.payer_info.payer_id;
+                                                        //console.log(data.result.payer.payer_info.payer_id);
+                                                    } else {}
+                                                };
+                                            </script>
+                                            <br>
+                                            <button type="submit" id="continueButton" class="btn btn-lg btn-primary btn-block" onclick="ppp.doContinue(); return false ;">
+                                                Checkout
+                                            </button>
+
                                         </div>
                                         <div id="btDrop" class="collapse">
                                             Braintree Drop-in
@@ -280,7 +354,7 @@
                                         <div id="btHosted" class="collapse">
                                             Braintree Hosted Fields
                                         </div>
-                                        
+
                             </div> <!-- div body-->
                         </div>
                     </div>
@@ -332,6 +406,7 @@
             return Pessoa;
         }
     </script>
+
 </body>
 
 </html>
