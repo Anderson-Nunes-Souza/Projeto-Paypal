@@ -274,7 +274,7 @@
                                         <div id="reference" class="collapse">
                                             Reference transaction
                                         </div>
-                                        <div id="ppPlus" class="collapse" onclick="ppplusDiv">
+                                        <div id="ppPlus" class="collapse">
                                             PayPal Plus
 
                                             <div id="ppplusDiv"></div>
@@ -299,7 +299,6 @@
                                                     "country": "BR",
                                                     "rememberedCards": rememberedCards,
                                                     "enableContinue": "continueButton",
-                                                    "iframeHeight": "450",
                                                     "onContinue": () => {
                                                         $.ajax({
                                                             url: "./Plus/paymentExecution.php",
@@ -320,7 +319,7 @@
                                                                 //console.table(result.transactions);
                                                                 //console.table(result.transactions[0].related_resources[0].sale.id);
                                                                 alert("Pagamento Concluído");
-                                                                window.location.href = "http://localhost/Plus%20Project/PlusProject/SucessPayment.php?paymentId=" + result.transactions[0].related_resources[0].sale.id;
+                                                                window.location.href = "./Thankyou/?paymentId=" + result.transactions[0].related_resources[0].sale.id;
                                                             },
                                                             error: function() {
                                                                 //console.log(error);
@@ -403,6 +402,8 @@
             Pessoa.push(document.getElementById("prod1Qtd").value); //indice 11
             Pessoa.push(document.getElementById("prod2Qtd").value); //indice 12
             Pessoa.push(document.getElementById("buyerCity").value); //indice 13
+
+            console.table("Pessoa");
             return Pessoa;
         }
     </script>
