@@ -52,4 +52,9 @@ $result = json_decode($result);
 //print_r($result);
 //print_r($result->token_id); //retornou token_id
 
-return $result->token_id;
+
+//print_r($result->links[0]->href); //Link para comprador concordar com pagamento.
+
+$token_id = $result->token_id; //salva o tokenid da sessão;
+
+return $result->links[0]->href; //retorna link para aprovação
