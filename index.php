@@ -122,7 +122,7 @@
                                         <div class="mb-3">
                                             <label for="number" class="form-label">Phone Number</label>
                                             <span style="color: red !important; display: inline; float: none;">*</span>
-                                            <input type="number" id="buyerPhone" class="form-control" name="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required placeholder="123-456-7890">
+                                            <input type="number" id="buyerPhone" class="form-control" name="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required placeholder="123-456-7890" value="123-456-7890">
                                         </div>
                                         <div>
                                             <hr color="red">
@@ -271,8 +271,38 @@
                                         <!--fim do Express Checkout-->
 
                                         <!--BOTÕES COLLAPSE -->
+
+                                        <!-- Reference transaction-->
                                         <div id="reference" class="collapse">
-                                            Reference transaction
+
+                                            <button type="submit" class="btn btn-lg btn-primary btn-block" onclick="redirect()"> Finalizar Pagamento </button>
+                                            <script>
+                                                function redirect(){
+                                                    alert("botão clicado");
+                                                    criarBilling();
+
+                                                    function criarBilling(){
+                                                        alert("função criarBilling");
+                                                        $.ajax({
+                                                            url: "./Reference/createBillingToken.php",
+                                                            type: "POST",
+                                                            data: {},
+                                                            success:function(result){
+                                                                result = result;
+                                                                console.table(result);
+                                                                window.location.href = result;
+                                                            },
+                                                            error: function(){
+                                                                alert("Erro Ajax Reference transacion");
+                                                            }
+                                                            
+                                                        });
+                                                    }                                                    
+                                                };
+                                            </script>
+
+
+
                                         </div>
                                         <div id="ppPlus" class="collapse">
                                             PayPal Plus
