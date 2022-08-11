@@ -275,35 +275,11 @@
                                         <!-- Reference transaction-->
                                         <div id="reference" class="collapse">
 
-                                            <button type="submit" class="btn btn-lg btn-primary btn-block" onclick="redirect()"> Finalizar Pagamento </button>
-                                            <script>
-                                                function redirect(){
-                                                    alert("botão clicado");
-                                                    criarBilling();
-
-                                                    function criarBilling(){
-                                                        alert("função criarBilling");
-                                                        $.ajax({
-                                                            url: "./Reference/createBillingToken.php",
-                                                            type: "POST",
-                                                            data: {},
-                                                            success:function(result){
-                                                                result = result;
-                                                                console.table(result);
-                                                                window.location.href = result;
-                                                            },
-                                                            error: function(){
-                                                                alert("Erro Ajax Reference transacion");
-                                                            }
-                                                            
-                                                        });
-                                                    }                                                    
-                                                };
-                                            </script>
-
-
+                                            <button class="btn btn-lg btn-primary btn-block" onclick="criarBilling()"> Finalizar Pagamento </button>
 
                                         </div>
+                                        <!--Fim do Reference -->
+                                        <!--PayPal Plus -->
                                         <div id="ppPlus" class="collapse">
                                             PayPal Plus
 
@@ -377,13 +353,17 @@
                                             </button>
 
                                         </div>
+                                        <!-- Fim do PayPal Plus -->
+                                        <!-- Braintree Dronp-in -->
                                         <div id="btDrop" class="collapse">
                                             Braintree Drop-in
                                         </div>
+                                        <!-- Fim do Braintree Drop-in -->
+                                        <!-- Braintree Hosted Fields -->
                                         <div id="btHosted" class="collapse">
                                             Braintree Hosted Fields
                                         </div>
-
+                                        <!-- Fim do Braintree Hosted Fields -->
                             </div> <!-- div body-->
                         </div>
                     </div>
@@ -435,7 +415,29 @@
 
             console.table("Pessoa");
             return Pessoa;
-        }
+        };
+    </script>
+
+    <script>
+        function criarBilling() {
+
+            //alert("botão pressionado");
+            $.ajax({
+                url: "./Reference/createBillingToken.php",
+                type: "POST",
+                data: {},
+                success: function(result) {
+                    result = result;
+                    console.table(result);
+                    window.location.href = result;
+                },
+                error: function() {
+                    alert("Erro ao Processar Pagamento, por favor tente novamente");
+                    document.location.reload();
+                }
+
+            });
+        };
     </script>
 
 </body>

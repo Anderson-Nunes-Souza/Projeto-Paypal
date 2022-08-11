@@ -1,5 +1,8 @@
 <?php
 // Chamada para gerar Acess Token
+
+session_start();
+
 $ch = curl_init();
 
 curl_setopt($ch, CURLOPT_URL, 'https://api-m.sandbox.paypal.com/v1/oauth2/token');
@@ -20,12 +23,13 @@ $result = curl_exec($ch);
 $result = json_decode($result);
 $atoken = $result->access_token;
 
+$_SESSION['atoken'] = $atoken;
+
 if (curl_errno($ch)) {
     echo 'Error:' . curl_error($ch);
 }
 curl_close($ch);
 
-//echo $atoken;
-return $atoken;
+return $atoken; // deixar como return para o createBilling Token funcionar
 
 ?>
