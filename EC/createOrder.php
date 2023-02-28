@@ -16,19 +16,19 @@ $payload =  "{
             \"amount\": {
                 \"breakdown\": {
                     \"item_total\": {
-                        \"currency_code\": \"USD\",
+                        \"currency_code\": \"BRL\",
                         \"value\":\"$buyerInfo[9]\"
                     },
                     \"shipping\": {
-                        \"currency_code\": \"USD\",
+                        \"currency_code\": \"BRL\",
                         \"value\":\"$buyerInfo[10]\"
                     },
 					\"tax_total\":{
-						\"currency_code\": \"USD\",
+						\"currency_code\": \"BRL\",
 						\"value\":\"0.00\"
 					}
                 },
-                \"currency_code\": \"USD\",
+                \"currency_code\": \"BRL\",
                 \"value\":\"$buyerInfo[8]\"
             },
             \"items\": [
@@ -38,7 +38,7 @@ $payload =  "{
                     \"name\": \"Product 1\",
                     \"quantity\":\"$buyerInfo[11]\",
                     \"unit_amount\": {
-                        \"currency_code\": \"USD\",
+                        \"currency_code\": \"BRL\",
                         \"value\": \"54.00\"
                     }
                 },
@@ -48,7 +48,7 @@ $payload =  "{
                     \"name\": \"Product 2\",
                     \"quantity\":\"$buyerInfo[12]\",
                     \"unit_amount\": {
-                        \"currency_code\": \"USD\",
+                        \"currency_code\": \"BRL\",
                         \"value\": \"16.00\"
                     }
                 }

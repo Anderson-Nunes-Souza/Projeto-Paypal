@@ -83,6 +83,7 @@ $result = json_decode($result);
 //echo $result->id;// Exibe o Payid
 
 ?>
+<!--Fim PHP, Inicio HTML-->
 
 <!DOCTYPE html>
 <html lang="en">
@@ -105,7 +106,7 @@ $result = json_decode($result);
             Having trouble? <a href="">Contact us</a>
         </p>
         <p class="lead">
-            <a class="btn btn-primary btn-sm" href="http://localhost/Projeto-Paypal/index.php" role="button">Continue to homepage</a>
+            <a class="btn btn-primary btn-sm" href="http://localhost:8888/Workspace/Projeto%20PayPal/Projeto-Paypal/index.php" role="button">Continue to homepage</a>
         </p>
     </div>
 

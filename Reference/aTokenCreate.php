@@ -29,6 +29,7 @@ if (curl_errno($ch)) {
     echo 'Error:' . curl_error($ch);
 }
 curl_close($ch);
+echo $atoken;
 
 return $atoken; // deixar como return para o createBilling Token funcionar
 

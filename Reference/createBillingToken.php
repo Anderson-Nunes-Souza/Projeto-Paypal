@@ -27,7 +27,7 @@ curl_setopt(
                                   \"plan\":  {
                                         \"type\": \"MERCHANT_INITIATED_BILLING\",
                                             \"merchant_preferences\":    {
-                                                      \"return_url\": \"http://localhost/Projeto-Paypal/Reference/createBillingAgreement.php\",
+                                                      \"return_url\": \"http://localhost:8888/Workspace/Projeto%20PayPal/Projeto-Paypal/Reference/createBillingAgreement.php\",
                                                             \"cancel_url\": \"https://localhost/Projeto-Paypal/\",
                                                                   \"notify_url\": \"https://example.com/notify\",
                                                                           \"accepted_pymt_type\": \"INSTANT\",
